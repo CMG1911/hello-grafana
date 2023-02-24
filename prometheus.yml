@@ -26,6 +26,12 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: 
+      - targets:
         - "localhost:9090"
-        - "10.250.X.X:9100"
+        - "10.250.15.2:9100"
+
+  - job_name: "elasticbeanstalk"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets:
+        - "hello-springrest-1.eu-west-1.elasticbeanstalk.com"
